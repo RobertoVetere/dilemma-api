@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dilemma Resolver</title>
+</head>
+<body>
+<h1>Dilemma Resolver</h1>
+<form method="post" action="/api/v1/dilemmas" th:object="${dilemmaRequest}">
+    <textarea name="description" placeholder="Write your dilemma..." rows="6" cols="50"></textarea><br/>
+    <button type="submit">Resolve</button>
+</form>
+
+<div th:if="${advice != null}">
+    <h2>Advice</h2>
+    <p><strong>Summary:</strong> <span th:text="${advice.summary}"></span></p>
+    <p><strong>Recommendation:</strong> <span th:text="${advice.recommendation}"></span></p>
+    <p><strong>Tone:</strong> <span th:text="${advice.tone}"></span></p>
+    <p><strong>Options:</strong></p>
+    <ul>
+        <li th:each="option : ${advice.options}" th:text="${option}"></li>
+    </ul>
+</div>
+</body>
+</html>
