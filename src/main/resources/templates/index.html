@@ -6,20 +6,46 @@
 </head>
 <body>
 <h1>Dilemma Resolver</h1>
-<form method="post" action="/api/v1/dilemmas" th:object="${dilemmaRequest}">
-    <textarea name="description" placeholder="Write your dilemma..." rows="6" cols="50"></textarea><br/>
+
+<form method="post" th:object="${dilemmaRequest}">
+    <label for="description">Describe your dilemma:</label><br/>
+    <textarea id="description" th:field="*{description}" rows="6" cols="60" placeholder="Write your dilemma here..."></textarea><br/><br/>
+
+    <label for="category">Optional: Select a category</label>
+    <select id="category" name="category">
+        <option value="">-- Auto Detect --</option>
+        <option value="personal">Personal</option>
+        <option value="ethical">Ethical</option>
+        <option value="career">Career</option>
+        <option value="health">Health</option>
+        <option value="relationships">Relationships</option>
+    </select><br/><br/>
+
+    <label for="tone">Preferred Tone</label>
+    <select id="tone" name="tone">
+        <option value="">-- Let AI decide --</option>
+        <option value="neutral">Neutral</option>
+        <option value="emphatic">Emphatic</option>
+        <option value="inspirational">Inspirational</option>
+        <option value="pragmatic">Pragmatic</option>
+    </select><br/><br/>
+
     <button type="submit">Resolve</button>
 </form>
+
+<hr/>
 
 <div th:if="${advice != null}">
     <h2>Advice</h2>
     <p><strong>Summary:</strong> <span th:text="${advice.summary}"></span></p>
     <p><strong>Recommendation:</strong> <span th:text="${advice.recommendation}"></span></p>
     <p><strong>Tone:</strong> <span th:text="${advice.tone}"></span></p>
+
     <p><strong>Options:</strong></p>
     <ul>
         <li th:each="option : ${advice.options}" th:text="${option}"></li>
     </ul>
 </div>
+
 </body>
 </html>

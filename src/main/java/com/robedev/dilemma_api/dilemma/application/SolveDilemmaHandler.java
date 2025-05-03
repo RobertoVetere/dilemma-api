@@ -5,6 +5,7 @@ import com.robedev.dilemma_api.dilemma.application.port.out.SonarGateway;
 import com.robedev.dilemma_api.dilemma.domain.model.Advice;
 import com.robedev.dilemma_api.dilemma.domain.model.Dilemma;
 import com.robedev.dilemma_api.dilemma.infraestructure.sonar.DilemmaAnalysis;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 /**
@@ -16,7 +17,7 @@ public class SolveDilemmaHandler implements SolveDilemmaUseCase {
 
     private final SonarGateway sonarGateway;
 
-    public SolveDilemmaHandler(SonarGateway sonarGateway) {
+    public SolveDilemmaHandler(@Qualifier("sonarOkHttp") SonarGateway sonarGateway) {
         this.sonarGateway = sonarGateway;
     }
 
