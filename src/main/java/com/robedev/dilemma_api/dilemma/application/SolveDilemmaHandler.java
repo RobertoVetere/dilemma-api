@@ -4,7 +4,7 @@ import com.robedev.dilemma_api.dilemma.application.port.in.SolveDilemmaUseCase;
 import com.robedev.dilemma_api.dilemma.application.port.out.SonarGateway;
 import com.robedev.dilemma_api.dilemma.domain.model.Advice;
 import com.robedev.dilemma_api.dilemma.domain.model.Dilemma;
-import com.robedev.dilemma_api.dilemma.infraestructure.sonar.DilemmaAnalysis;
+import com.robedev.dilemma_api.dilemma.domain.model.DilemmaAnalysis;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 

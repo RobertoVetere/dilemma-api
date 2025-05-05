@@ -1,6 +1,5 @@
-package com.robedev.dilemma_api.dilemma.infraestructure.sonar;
+package com.robedev.dilemma_api.dilemma.domain.model;
 
-import com.robedev.dilemma_api.dilemma.domain.model.DilemmaCategory;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

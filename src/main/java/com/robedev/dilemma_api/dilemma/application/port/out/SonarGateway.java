@@ -2,7 +2,7 @@ package com.robedev.dilemma_api.dilemma.application.port.out;
 
 import com.robedev.dilemma_api.dilemma.domain.model.Advice;
 import com.robedev.dilemma_api.dilemma.domain.model.Dilemma;
-import com.robedev.dilemma_api.dilemma.infraestructure.sonar.DilemmaAnalysis;
+import com.robedev.dilemma_api.dilemma.domain.model.DilemmaAnalysis;
 
 /**
  * Output port for interacting with the Perplexity Sonar AI service.
